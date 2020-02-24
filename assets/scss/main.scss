@@ -6,7 +6,15 @@
  * https://material.io/design/color
  */
 
-@import "@material/theme/functions";
+//@use "~@material/theme/functions";
+
+/**
+ * Import MDC sources
+ */
+@use "~material-components-web/material-components-web";
+@use "@material/shape/mixins" as shape-mixins;
+
+
 
 // 1. Include custom variables
 $color-gray-dark: #212121;
@@ -51,13 +59,6 @@ $screen-sm-max:	($screen-md-min - 1);
 $screen-md-max:	($screen-lg-min - 1);
 
 $gutter: 30px;
-
-
-/**
- * Import MDC sources
- */
-
-@import "../node_modules/material-components-web/material-components-web";
 
 
 /**
@@ -146,7 +147,7 @@ a {
 /* Header */
 
 #header {
-	
+
 	.mdc-tab {
 		color: $mdc-theme-on-primary;
 	}
@@ -156,7 +157,7 @@ a {
 			height: 4px;
 		}
 	}
-	
+
 	.mdc-top-app-bar__title {
 		color: $mdc-theme-on-primary;
 
@@ -218,7 +219,7 @@ a {
 		align-items: center;
 		padding: 8px 0;
 	}
-	
+
 }
 
 
@@ -231,7 +232,7 @@ a {
 		display: inline-block;
 		margin-right: 16px;
 	}
-	
+
 	p {
 		margin-top: 10px;
 	}
@@ -253,7 +254,7 @@ a {
 			margin-right: 16px;
 		}
 	}
-	
+
 }
 
 
@@ -264,19 +265,19 @@ a {
 
 /* If WP-Adminbar is visible */
 body.admin-bar {
-	
+
 	#header.mdc-toolbar--fixed {
 		top: 32px;
 	}
-	
+
 	.edit-link a {
-		
+
 		&::before {
 			content: "\270E";
 			display: inline-block;
 			margin-right: 5px;
 		}
-		
+
 	}
 }
 
@@ -332,19 +333,19 @@ body.admin-bar {
 }
 
 .widget-area {
-	
+
 	ul {
 		list-style: none;
 		padding: 0;
 	}
-	
+
 }
 
 
 /* Author */
 
 .author-avatar {
-	
+
 	.avatar {
 		width: 64px;
 		height: auto;
@@ -357,7 +358,7 @@ body.admin-bar {
 	h2, h3 {
 		margin-top: 0;
 	}
-	
+
 }
 
 
@@ -437,7 +438,7 @@ figure {
 }
 
 .comment-form {
-	
+
 	.mdc-text-field {
 		width: 100%;
 		margin: 10px 0;
@@ -446,7 +447,7 @@ figure {
 	.form-submit {
 		margin-top: 20px;
 	}
-	
+
 }
 
 .comment-notes {
@@ -461,7 +462,7 @@ figure {
 	list-style: none;
 	margin: 0 auto;
 	width: 68.9%;
-		
+
 	> li.comment {
 		margin: 0 0 1.625em;
 		padding: 1.625em;
@@ -488,7 +489,7 @@ figure {
 		top: 0;
 		left: -102px;
 	}
-	
+
 }
 
 
@@ -497,7 +498,7 @@ figure {
  */
 
 @media (min-width: $screen-lg-min) {
-	
+
 	.alignwide {
 		width: 80vw;
 		max-width: 80vw;
@@ -508,11 +509,15 @@ figure {
 }
 
 @media (max-width: $screen-sm-max) {
-	
+
 	#main {
 		.mdc-layout-grid__cell {
 			padding: 0;
 		}
 	}
 
+}
+
+.my-rounded-button-asd {
+  @include shape-mixins.radius(10%);
 }
