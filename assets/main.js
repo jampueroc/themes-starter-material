@@ -1,6 +1,6 @@
 // Webpack Imports
 import * as mdc from 'material-components-web'; // Get all components
-import './scss/main.scss';
+import './style.scss';
 
 
 document.addEventListener( 'DOMContentLoaded', function () {
