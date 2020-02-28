@@ -18,7 +18,7 @@ if ( ! class_exists( 'WP_MDC_Navwalker' ) ) {
 			
 			foreach ( $elements as $item ) {
 				if ( empty( $item->title ) ) {
-					$list[] = '<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_attr( 'Add a menu', 'my-theme' ) . '</a>';
+				    continue;
 				}
 
 				$atts           = array();
@@ -50,7 +50,8 @@ if ( ! class_exists( 'WP_MDC_Navwalker' ) ) {
 				
 				$list[] = '<a href="' . $item->url . '" class="' . $class_names . '"' . $attributes . ' role="tab"><span class="mdc-tab__content">' . $item->title . '</span><span class="' . $indicator_class_names . '"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span><span class="mdc-tab__ripple"></span></a>';
 			}
-			
+			if(empty($list))
+			    return null;
 			return join( "\n", $list );
 		}
 		

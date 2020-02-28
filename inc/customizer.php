@@ -88,6 +88,19 @@ function themes_starter_customize( $wp_customize ) {
 		'settings' => 'search_enabled',
 		'priority' => 3,
 	) );
+
+	// Other?
+	$wp_customize->add_setting( 'top_bar_enabled', array(
+		'default'           => '1',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'top_bar_enabled', array(
+		'type'     => 'checkbox',
+		'label'    => __( 'Show Top bar?', 'my-theme' ),
+		'section'  => 'theme_header_section',
+		'settings' => 'top_bar_enabled',
+		'priority' => 3,
+	) );
 }
 add_action( 'customize_register', 'themes_starter_customize' );
 

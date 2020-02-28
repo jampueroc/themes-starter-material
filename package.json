@@ -10,8 +10,9 @@
     "url": "git://github.com/them-es/themes-starter-material.git"
   },
   "scripts": {
-    "watch": "node_modules/.bin/webpack --mode development",
-    "watch-prod": "node_modules/.bin/webpack --mode production"
+    "watch": "node_modules/.bin/webpack --mode development --watch",
+    "watch-prod": "node_modules/.bin/webpack --mode production --watch",
+    "build": "node_modules/.bin/webpack --mode production && zip -r theme.zip . -x \"node_modules/**/*\" -x \".idea/*\" -x \".git*\" -x \"gulpfile.js\" -x \"package*.json\" -x \"**/*.scss\","
   },
   "browserslist": [
     "last 2 versions"

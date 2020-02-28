@@ -6,7 +6,7 @@
  * https://material.io/design/color
  */
 
-//@use "~@material/theme/functions";
+@use "~@material/theme/functions";
 
 /**
  * Import MDC sources
@@ -114,6 +114,9 @@ a {
 }
 .text-center {
 	text-align: center;
+}
+.text-justify {
+	text-align: justify;
 }
 
 img {
@@ -518,6 +521,15 @@ figure {
 
 }
 
-.my-rounded-button-asd {
-  @include shape-mixins.radius(10%);
+.white-line-background {
+	background-color: #ffffff;
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='653' height='78.4' viewBox='0 0 1000 120'><g fill='none' stroke='#b3b3b3' stroke-width='5.5' stroke-opacity='0.40'><path d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/></g></svg>");
+}
+
+.blue-line-background {
+	background-color: #0586ff;
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='653' height='78.4' viewBox='0 0 1000 120'><g fill='none' stroke='#308fff' stroke-width='5.5' stroke-opacity='0.62'><path d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/><path d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/></g></svg>");
+}
+.blue-wave {
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%; width: 100%;'><defs><linearGradient id='grad1' x1='0%' y1='0%' x2='0%' y2='100%'>   <stop offset='0%' style='stop-color:rgba(0,83,250,0.758140756302521);stop-opacity:0' />   <stop offset='100%' style='stop-color:rgba(6,65,184,1);stop-opacity:1' /> </linearGradient></defs><path d='M-51.74,154.44 C209.18,-24.17 493.43,261.02 568.51,-5.42 L500.00,150.00 L-24.04,169.23 Z' fill='url(#grad1)'></path></svg>");
 }

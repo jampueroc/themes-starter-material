@@ -12,6 +12,8 @@
 	$navbar_position = get_theme_mod( 'navbar_position', 'fixed' ); // get custom meta-value
 
 	$search_enabled = get_theme_mod( 'search_enabled', '1' ); // get custom meta-value
+
+	$top_bar_enabled = get_theme_mod( 'top_bar_enabled', '1' ); // get custom meta-value
 ?>
 
 <body <?php body_class( 'mdc-typography' ); ?>>
@@ -20,6 +22,7 @@
 
 <div id="wrapper">
 	<header id="header" class="mdc-top-app-bar mdc-top-app-bar--<?php echo $navbar_position; ?><?php if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
+	<?php if ( '1' === $top_bar_enabled ) : ?>
 		<div class="mdc-top-app-bar__row">
 			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
 				<a href="<?php echo home_url(); ?>" class="mdc-top-app-bar__title" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -48,7 +51,7 @@
 				</section>
 			<?php endif; ?>
 		</div><!-- /.mdc-top-app-bar__row -->
-		
+		<?php endif; ?>
 		<div id="tab-bar-menu" class="mdc-tab-bar" role="tablist">
 			<div class="mdc-tab-scroller">
 				<div class="mdc-tab-scroller__scroll-area">
@@ -61,7 +64,7 @@
 									'container'      => '',
 									'items_wrap'     => '%3$s',
 									'depth'          => 1,
-									//'fallback_cb'    => 'WP_MDC_Navwalker::fallback',
+									'fallback_cb'    => false,
 									'walker'         => new WP_MDC_Navwalker(),
 								)
 							);

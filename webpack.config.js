@@ -6,11 +6,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
 	context: path.resolve( __dirname, 'assets' ),
 	entry: {
-		main: [ './main.js', './style.scss'],
+		main: [ './main.js', './main.scss'],
 	},
 	output: {
-		path: path.resolve( __dirname, 'assets/js' ),
-		filename: '[name].bundle.js',
+		path: path.resolve( __dirname, 'assets' ),
+		filename: 'js/[name].bundle.js',
 	},
 	externals: {
 		jquery: 'jQuery'
@@ -27,7 +27,6 @@ module.exports = {
 		require('autoprefixer')
 	],
 	devtool: 'source-map',
-	watch: true,
 	module: {
 	rules: [
 			{
@@ -36,7 +35,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name].css"
+              name: "css/[name].css"
             }
           },
           {
@@ -56,14 +55,12 @@ module.exports = {
                // Prefer Dart Sass
                implementation: require('sass'),
                sassOptions: {
-								 resources: [ path.resolve( __dirname, 'node_modules/**/*.scss' ),
-                           path.resolve( __dirname, 'assets/**/scss')
-                   ],
-                 includePaths: [path.resolve( __dirname, 'node_modules' ),
-                                           path.resolve( __dirname, 'node_modules/material-components-web/node_modules' ),
-                                                   path.resolve( __dirname, 'node_modules/@material/*' ),
-                                                   path.resolve( __dirname, 'assets'),
-                                   ]
+                 includePaths: [
+                       path.resolve( __dirname, 'node_modules' ),
+                       path.resolve( __dirname, 'node_modules/material-components-web/node_modules' ),
+                       path.resolve( __dirname, 'node_modules/@material/*' ),
+                       path.resolve( __dirname, 'assets'),
+                 ]
                },
              }
            }
