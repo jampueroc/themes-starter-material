@@ -1,6 +1,5 @@
 // Webpack Imports
 import * as mdc from 'material-components-web'; // Get all components
-import './main.scss';
 
 
 document.addEventListener( 'DOMContentLoaded', function () {
@@ -16,6 +15,12 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	// Scrollable tab bar menu: https://github.com/material-components/material-components-web/blob/master/demos/tab-scroller.html
 	window.tabBarScroller = new mdc.tabScroller.MDCTabScroller( document.querySelector( '#tab-bar-menu' ) );
+	const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
+	const formField = new mdc.formField.MDCFormField(document.querySelector('.mdc-form-field'));
+	formField.input = checkbox;
+	formField.initialize();
+	const floatingLabel = new mdc.floatingLabel.MDCFloatingLabel(document.querySelector('.mdc-floating-label'));
+	floatingLabel.initialize();
 
 } );
 

@@ -21,7 +21,9 @@
 <?php wp_body_open(); ?>
 
 <div id="wrapper">
-	<header id="header" class="mdc-top-app-bar mdc-top-app-bar--<?php echo $navbar_position; ?><?php if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
+    <?php if ( '1' === $top_bar_enabled or  '1' === $search_enabled or  wp_get_nav_menu_object( 'main-menu' )->count > 0) : ?>
+	<header id="header" class="mdc-top-app-bar">
+
 	<?php if ( '1' === $top_bar_enabled ) : ?>
 		<div class="mdc-top-app-bar__row">
 			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -39,7 +41,7 @@
 				?>
 				</a>
 			</section>
-			
+
 			<?php if ( '1' === $search_enabled ) : ?>
 				<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
 					<form class="mdc-form-field mdc-form-field--align-end search-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -52,6 +54,7 @@
 			<?php endif; ?>
 		</div><!-- /.mdc-top-app-bar__row -->
 		<?php endif; ?>
+		<?php if( wp_get_nav_menu_object( 'main-menu' )->count > 0 ) : ?>
 		<div id="tab-bar-menu" class="mdc-tab-bar" role="tablist">
 			<div class="mdc-tab-scroller">
 				<div class="mdc-tab-scroller__scroll-area">
@@ -73,7 +76,10 @@
 				</div>
 			</div><!-- /.mdc-tab-scroller -->
 		</div><!-- /.mdc-tab-bar -->
+		<?php endif; ?>
+
 	</header><!-- /#header -->
-	
-	<main id="main" class="mdc-layout-grid<?php if ( 'fixed' === $navbar_position ) : echo ' mdc-top-app-bar--prominent-fixed-adjust'; endif; ?>">
+	<?php endif; ?>
+
+	<main id="main" class="mdc-layout-grid<?php if ( 'fixed' === $navbar_position and  wp_get_nav_menu_object( 'main-menu' )->count > 0) : echo ' mdc-top-app-bar--prominent-fixed-adjust'; endif; ?>">
 		<div class="mdc-layout-grid__inner">

@@ -17,7 +17,7 @@ module.exports = {
 	},
 	plugins: [
   new MiniCssExtractPlugin({
-    filename: "[name].css"
+    filename: "[name].min.css"
   }),
 		new webpack.ProvidePlugin( {
 			$: 'jquery',
@@ -35,7 +35,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "css/[name].css"
+              name: "css/[name].min.css"
             }
           },
           {
