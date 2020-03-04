@@ -32,3 +32,8 @@
 
 			</div><!-- /.mdc-grid__inner -->
 		</main><!-- /#main -->
+
+<?php wp_footer(); ?>
+
+</body>
+</html>
