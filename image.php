@@ -22,9 +22,11 @@
 					</div><!-- /.mdc-layout-grid__inner -->
 				</div><!-- /.mdc-layout-grid -->
 
+                <?php if( !empty(the_title())): ?>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- /.entry-header -->
+                <?php endif; ?>
 
 				<div class="entry-content">
 

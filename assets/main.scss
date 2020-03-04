@@ -177,8 +177,8 @@ a {
 		will-change: background-color;
 
 		&:hover,
-		&.mdc-text-field--focused {
-			background-color: #FFF;
+		&.mdc-text-field--focused, &:not(.mdc-text-field--disabled) {
+			background-color: transparent;
 
 			.material-icons,
 			.mdc-floating-label,
@@ -533,14 +533,13 @@ figure {
 
 .blue-wave {
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 	background-position: bottom;
 	background-image: url("/wp-content/themes/theme/assets/img/blue-wave.svg");
 }
 
 .mail-background {
-	min-height: 20vw;
-//	border-radius: 24px 24px 0 0;
+	min-height: 250px;
 	background-position: top;
 	background-size: contain;
 	background-image: url("/wp-content/themes/theme/assets/img/mail.svg");
@@ -560,7 +559,24 @@ figure {
 	justify-content: center;
 }
 
-.card-size {
-	max-width: 50vw;
-	min-width: 360px;
+.fullwidth{
+	width: 100%;
+}
+
+.margin-top {
+	margin-top: 20px;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) {
+	background-color: transparent;
+}
+.mdc-text-field--fullwidth:not(.mdc-text-field--textarea) .mdc-text-field__input {
+	padding: 20px 16px 0;
+}
+
+.not-padding-top{
+	padding-top: 0;
+}
+.card-shadow {
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }

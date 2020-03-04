@@ -14,6 +14,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			}
 		} );
 	}
+	mdc.autoInit(document);
 
 	// Scrollable tab bar menu: https://github.com/material-components/material-components-web/blob/master/demos/tab-scroller.html
 //	window.tabBarScroller = new mdc.tabScroller.MDCTabScroller( document.querySelector( '#tab-bar-menu' ) );
@@ -21,4 +22,4 @@ document.addEventListener( 'DOMContentLoaded', function () {
 } );
 
 // https://material.io/develop/web/components/auto-init
-mdc.autoInit();
+window.mdc = mdc;

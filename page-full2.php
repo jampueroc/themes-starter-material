@@ -11,7 +11,9 @@
 	<?php the_post(); ?>
 
 	<div id="post-<?php the_ID(); ?>" <?php post_class( 'mdc-layout-grid__cell mdc-layout-grid__cell--span-12 content' ); ?>>
+		<?php if( !empty(the_title())): ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php endif; ?>
 		<?php
 			the_content();
 			
@@ -34,6 +36,5 @@
 		</main><!-- /#main -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>
