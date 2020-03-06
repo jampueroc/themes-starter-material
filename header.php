@@ -81,5 +81,5 @@
 	</header><!-- /#header -->
 	<?php endif; ?>
 
-	<main id="main" class="mdc-layout-grid  <?php if ( '1' !== $top_bar_enabled and  '1' !== $search_enabled or  wp_get_nav_menu_object( 'main-menu' )->count > 0) : echo 'not-padding-top'; endif; ?><?php if ( 'fixed' === $navbar_position and  wp_get_nav_menu_object( 'main-menu' )->count > 0) : echo ' mdc-top-app-bar--prominent-fixed-adjust'; endif; ?>">
+	<main id="main" class="mdc-layout-grid  <?php if ( '1' !== $top_bar_enabled and  '1' !== $search_enabled or  wp_get_nav_menu_object( 'main-menu' )->count > 0) : echo 'not-padding-top-bottom'; endif; ?><?php if ( 'fixed' === $navbar_position and  wp_get_nav_menu_object( 'main-menu' )->count > 0) : echo ' mdc-top-app-bar--prominent-fixed-adjust'; endif; ?>">
 		<div class="mdc-layout-grid__inner">
